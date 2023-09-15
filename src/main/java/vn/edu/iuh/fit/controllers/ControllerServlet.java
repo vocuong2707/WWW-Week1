@@ -1,4 +1,4 @@
-package controllers;
+package vn.edu.iuh.fit.controllers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,8 +23,10 @@ public class ControllerServlet extends HttpServlet {
        if(user.equals("vocuong") && pass.equals("123456")) {
            resp.getWriter().println("Dang Nhap Thanh Cong");
        }else {
-            resp.getWriter().println("Dang Nhap That Bai");
-        }
+           String site = "http://localhost:8080/Week1/" ;
+           resp.setStatus(resp.SC_MOVED_TEMPORARILY);
+           resp.setHeader("Location", site);
+       }
 
     }
 }
